@@ -3,6 +3,7 @@
 .project
 .classpath
 *.jar
+*.class
 target/
 
 # temp ignore
@@ -41,7 +42,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
