@@ -31,17 +31,14 @@ class ChannelBufferByteInput implements ByteInput {
         this.buffer = buffer;
     }
 
-    @Override
     public void close() throws IOException {
         // nothing to do
     }
 
-    @Override
     public int available() throws IOException {
         return buffer.readableBytes();
     }
 
-    @Override
     public int read() throws IOException {
         if (buffer.isReadable()) {
             return buffer.readByte() & 0xff;
@@ -49,12 +46,10 @@ class ChannelBufferByteInput implements ByteInput {
         return -1;
     }
 
-    @Override
     public int read(byte[] array) throws IOException {
         return read(array, 0, array.length);
     }
 
-    @Override
     public int read(byte[] dst, int dstIndex, int length) throws IOException {
         int available = available();
         if (available == 0) {
@@ -66,7 +61,6 @@ class ChannelBufferByteInput implements ByteInput {
         return length;
     }
 
-    @Override
     public long skip(long bytes) throws IOException {
         int readable = buffer.readableBytes();
         if (readable < bytes) {
